@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3005;
+const path = require('path');
 
-app.get('/', (req, res) => {
-    res.status(200).send('Welcome to the homepage');
+// middleware to serve static file
+app.use('/', express.static(path.join(__dirname, '../', 'client/build')));
+
+app.get('*', (req, res) => {
+    res.status(200).sendFile(express.static(path.join(__dirname, '../', 'client/build')));
 });
 
 app.listen(port, () => {
