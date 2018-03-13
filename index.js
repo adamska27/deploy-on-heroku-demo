@@ -8,4 +8,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`The app is listening in port ${port}`);
-}).on("error", err => console.log("erreur de connexion: ", err));
+}).on("error", err => console.log("erreur de connexion : ", err));
