@@ -4,10 +4,10 @@ const port = process.env.PORT || 3005;
 const path = require('path');
 
 // middleware to serve static file
-app.use('/', express.static(path.join(__dirname, '../', 'client/build')));
+app.use('/', express.static(path.join(__dirname, 'client/build')));
 
 app.get('*', (req, res) => {
-    res.status(200).sendFile(express.static(path.join(__dirname, '../', 'client/build')));
+    res.status(200).sendFile(express.static(path.join(__dirname, 'client/build')));
 });
 
 app.listen(port, () => {
